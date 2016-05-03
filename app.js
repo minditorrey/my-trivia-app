@@ -9,7 +9,7 @@ var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
 
-const MONGOURL = 'mongodb://localhost/trivia-cards';
+const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/trivia-cards';
 
 mongoose.connect(MONGOURL, err => {
 	console.log(err || `Connected to MongoDB at ${MONGOURL}`)
